@@ -1,0 +1,11 @@
+html,body{
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	width: 100vw;
+}
+#bodybg{
+	position: relative;
+	background:linear-gradient(#657A99,#95C42B);		
+}
+

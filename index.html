@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Gradient Color Picker</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="icon" href="img/picker.png">
+  </head>
+  <body id="bodybg">
+    <!-- Start your project here-->
+    <div class="container-fluid">
+      <div class="row text-center">
+        <div class="col"><h1 class="text-white">Gradient color picker</h1>
+          <br><br>
+          <input type="color" name="" id="color1" value="#657A99">
+          <input type="color" name="" id="color2" value="#95C42B">
+          <br><br>
+        <h3 id="showval" class="text-white"></h3></div>
+     
+      </div>
+    </div>
+    <div class="div text-center">
+       <button type="button" class="btn btn-elegant" onclick="setbgcolor1();">Left</button>
+       <button type="button" class="btn btn-elegant" onclick="setbgcolor2();">Top</button>
+       <button type="button" class="btn btn-elegant" onclick="setbgcolor3();">Bottom</button>
+        <button type="button" class="btn btn-elegant" onclick="setbgcolor();">Right</button>
+    </div>
+       
+    <!-- /Start your project here-->
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.js"></script>
+    <script>
+    const colorone= document.getElementById('color1');
+    const colortwo= document.getElementById('color2');
+    const bodybg1=document.getElementById('bodybg');
+    const showdata=document.getElementById('showval');
+    function setbgcolor(){
+    bodybg1.style.background=`linear-gradient(to right,${colorone.value},${colortwo.value})`;
+    showdata.textContent =`Copy Your Code: linear-gradient(to right,${colorone.value},${colortwo.value});`;
+    }
+    function setbgcolor1(){
+    bodybg1.style.background=`linear-gradient(to left,${colorone.value},${colortwo.value})`;
+    showdata.textContent =`Copy Your Code: linear-gradient(to left,${colorone.value},${colortwo.value});`;
+    }
+     function setbgcolor2(){
+    bodybg1.style.background=`linear-gradient(to top,${colorone.value},${colortwo.value})`;
+    showdata.textContent =`Copy Your Code: linear-gradient(to top,${colorone.value},${colortwo.value});`;
+    }
+    function setbgcolor3(){
+    bodybg1.style.background=`linear-gradient(to bottom,${colorone.value},${colortwo.value})`;
+    showdata.textContent =`Copy Your Code: linear-gradient(to bottom,${colorone.value},${colortwo.value});`;
+    }
+    colorone.addEventListener('input', setbgcolor);
+    colortwo.addEventListener('input', setbgcolor);
+    </script>
+  </body>
+</html>
